@@ -82,6 +82,7 @@ async def pstats(ctx,*,args):
 			record = "%s - %s (%s)" % (stats['wins'],stats['losses'],stats['saves'])
 			embed = createEmbed(title,team)
 			embed.add_field(name="Record",value=record,inline=True)
+			embed.add_field(name="Saves",value=stats['saves'],inline=True)
 			embed.add_field(name="ERA",value=stats['era'],inline=True)
 			embed.add_field(name="WHIP",value=stats['whip'],inline=True)
 			embed.add_field(name="Opp. Batting",value=("%s/%s/%s/%s" % (stats['avg'],stats['obp'],stats['slg'],stats['ops'])),inline=True)
@@ -214,6 +215,7 @@ def createEmbed(title,team):
 		print('fuck')
 	embed = discord.Embed(title=title, color=color)
 	embed.set_thumbnail(url=thumbnail)
+    #embed.set_footer()
 	return embed
 
 bot.run(token)
