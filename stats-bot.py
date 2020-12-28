@@ -10,7 +10,7 @@ from discord.ext import commands
 
 prefix = '.'
 bot = commands.Bot(command_prefix=prefix,description='MLB Stats Bot')
-token = ''
+token = 'NzUwODY2MjAyODA4NjgwNDYw.X1AwpQ.LIrKFhpoP7MVDpW6fqN8UqagRyc'
 
 #------------------------------------------------------------------------------
 # Commands
@@ -103,8 +103,11 @@ async def pstats(ctx,*,args):
 
 @bot.command()
 async def otter(ctx):
-	otters = open('otters.txt').read().splitlines()
-	await ctx.send(random.choice(otters))
+	if ctx.message.author.id == 434533589279834124:#stu
+		await ctx.send("unban u/botterhooligan from r/cardinals")
+	else:
+		otters = open('otters.txt').read().splitlines()
+		await ctx.send(random.choice(otters))
 
 @bot.command()
 async def quit(ctx):
